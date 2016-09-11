@@ -85,6 +85,68 @@
         android:entries="@array/maskapai"
         android:spinnerMode="dropdown"/>
 
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pilih Kelas Penerbangan :"/>
+
+    <RadioGroup
+        android:id="@+id/radiogroupclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButtonB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Bisnis"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonFC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="First Class"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barang Bawaan :"/>
+
+    <LinearLayout
+        android:layout_width="238dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Ransel"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Koper"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Paket"/>
+    </LinearLayout>
+
     <Button
         android:id="@+id/buttonpsn"
         android:layout_width="wrap_content"
@@ -107,6 +169,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/textViewHasil2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <TextView
+        android:id="@+id/textViewHasil3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+
 
 </LinearLayout>
 </ScrollView>
