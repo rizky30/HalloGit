@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity
     EditText etNomor;
     Button buttonpsn;
     TextView tvHasil;
+    TextView tvJudul;
+    Spinner spMaskapai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,17 +27,63 @@ public class MainActivity extends AppCompatActivity
         etNomor = (EditText) findViewById(R.id.etNomor);
         buttonpsn = (Button) findViewById(R.id.buttonpsn);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
+        tvJudul = (TextView) findViewById(R.id.textViewJudul);
+        spMaskapai = (Spinner) findViewById(R.id.spinnermaskapai);
 
         buttonpsn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                String nama = etNama.getText().toString();
-                String nomor = etNomor.getText().toString();
-                tvHasil.setText("Nama anda : " + nama + ", Nomor Identitas anda : " + nomor);
+                doProcess();
             }
         });
 
+    }
+
+    private void doProcess()
+    {
+        if (isValid())
+        {
+            //tvJudul
+            tvJudul.setText("DATA PEMESAN");
+
+            //tvHasil
+            String nama = etNama.getText().toString();
+            String nomor = etNomor.getText().toString();
+            tvHasil.setText("Nama : " + nama + "\nNomor Identitas : " + nomor + "\nMaskapai : " + spMaskapai.getSelectedItem().toString());
+        }
+    }
+
+    private boolean isValid()
+    {
+        boolean valid = true;
+
+        String nama = etNama.getText().toString();
+        String nomor = etNomor.getText().toString();
+
+        if (nama.isEmpty())
+        {
+            etNama.setError("Nama belum diisi!");
+            valid = false;
+        } else if (nama.length() < 3)
+        {
+            etNama.setError("Nama minimal 3 karakter!");
+            valid = false;
+        } else
+        {
+            etNama.setError(null);
+        }
+
+        if (nomor.isEmpty())
+        {
+            etNomor.setError("Nomor Identitas belum diisi!");
+            valid = false;
+        } else
+        {
+            etNomor.setError(null);
+        }
+
+        return valid;
     }
 }
